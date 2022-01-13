@@ -1,15 +1,4 @@
-# This is a sample Python script.
 from english_words import english_words_lower_alpha_set
-
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
 
 def next_guess(words, index = 0):
     all_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
@@ -20,7 +9,6 @@ def next_guess(words, index = 0):
                    word in words]
     word_scores, words = zip(*sorted(zip(word_scores, words), reverse=True))
     return words[index]
-
 
 def filter_list(words, result, guess):
     checked_letters = []
@@ -56,15 +44,12 @@ def filter_list(words, result, guess):
 
     return words
 
-
 def correct_result(results):
     for result in results:
         if result != "2":
             return False
     return True
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     words = [word for word in english_words_lower_alpha_set if len(word) == 5 and word.isalpha()]
 
@@ -85,5 +70,3 @@ if __name__ == '__main__':
 
         result = [char for char in result]
         words = filter_list(words, result, guess)
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
